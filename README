@@ -1,0 +1,56 @@
+This Python project generates a PDF report showing weekly average and weekly sum visualizations for key player performance metrics. It’s a dual-panel comparison of how players perform on average and in total each week — with statistical context like standard deviation and mean lines.
+
+Input:
+
+player_profiles.csv: A CSV file containing player tracking data across multiple weeks.
+Required Columns:
+Week
+Player Name
+Player Load
+Sprint Distance
+Top Speed (only used in the average plots)
+Power Plays
+Distance
+
+Output
+
+player_stats_all_weeks_combined.pdf: A multi-page PDF with one page per week, containing:
+
+Top Row: Weekly averages (with overall mean ± standard deviation)
+
+Bottom Row: Weekly sums (with week-level mean ± standard deviation)
+
+Each row includes the following metric visualizations:
+Player Load
+Sprint Distance
+Power Plays
+Distance
+(Top Speed is included in averages only)
+
+
+Visualization Details
+
+Top Row: Weekly Averages
+Plots per player per metric
+Horizontal lines:
+Solid Black: Global average across all weeks and players
+Dashed Black: ±1 global standard deviation
+Custom y-axis:
+Top Speed: [10, 24]
+Others: up to 1.5× weekly max
+Bottom Row: Weekly Sums
+Plots per player per metric
+Horizontal lines:
+Solid Black: Week's average
+Dashed Black: ±1 standard deviation for the current week
+Custom y-axis:
+Power Plays: up to 3.5× max
+Others: up to 3× max
+
+
+What It Does:
+- Loads player data
+- Computes weekly averages and sums per player
+- Calculates overall and per-week mean/std dev values
+- Generates bar plots comparing players’ performance
+- Exports to PDF for easy sharing or printing
